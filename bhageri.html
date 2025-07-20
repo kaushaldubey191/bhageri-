@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>गाँव Bhageri - Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    nav {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+    .section {
+      margin-top: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px 0;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hidden-box {
+      display: none;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>गाँव Bhageri</h1>
+    <p>Post Aalmganj | Block Barsthi | District Jaunpur (UP)</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="section">
+    <h2>गाँव का परिचय</h2>
+    <p>भगेरी गाँव उत्तर प्रदेश के जौनपुर जिले में स्थित एक सुंदर, शांतिपूर्ण और संस्कृतिक गांव है। यहाँ के लोग मेहनती और मिलनसार हैं।</p>
+  </div>
+
+  <div class="section">
+    <h2>जानकारी प्राप्त करें:</h2>
+
+    <button onclick="toggleBox('schoolBox')">🎓 प्राथमिक विद्यालय</button>
+    <div id="schoolBox" class="hidden-box">
+      <p>गाँव का प्राथमिक विद्यालय बच्चों को अच्छी शिक्षा प्रदान कर रहा है। यहाँ प्रशिक्षित शिक्षक उपलब्ध हैं।</p>
+    </div>
+
+    <button onclick="toggleBox('panchayatBox')">🏫 पंचायत भवन</button>
+    <div id="panchayatBox" class="hidden-box">
+      <p>गाँव का पंचायत भवन सभी ग्राम पंचायत बैठकों व योजनाओं का केंद्र है।</p>
+    </div>
+
+    <button onclick="toggleBox('mapBox')">🗺 लोकेशन (Map)</button>
+    <div id="mapBox" class="hidden-box">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1dXXX...XYZ" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>संपर्क करें</h2>
+    <p>📍 पता: भगेरी, पोस्ट आलमगंज, ब्लॉक बरसठी, जिला जौनपुर, उत्तर प्रदेश</p>
+    <p>📞 मोबाइल: +91-1234567890</p>
+  </div>
+
+  <footer>
+    © 2025 गाँव Bhageri | Designed with kaushal ❤
+  </footer>
+
+  <script>
+    function toggleBox(id) {
+      var box = document.getElementById(id);
+      if (box.style.display === "none" || box.style.display === "") {
+        box.style.display = "block";
+      } else {
+        box.style.display = "none";
+      }
+    }
+  </script>
+  <button onclick="showData('home')">Home</button>
+<button onclick="showData('about')">About</button>
+<button onclick="showData('content')">Content</button>
+
+<div id="display"></div>
+
+<script>
+  function showData(section) {
+    let content = {
+      home: "Bhageri is located in Post Aalmganj, Block Barsthi, District Jaunpur.",
+      about: "Our village Bhageri  known for its culture and unity भारत गाँवों का देश है और यहाँ की आत्मा गाँवों में बसती है। गाँव शहर की भागदौड़ से दूर शांति और सुकून का प्रतीक होते हैं। गाँव के जीवन में प्रकृति का अद्भुत सौंदर्य समाया होता है  जो शहरों में मिलना मुश्किल है। गाँव के लोग मेहनती और सीधे-साधे होते है जो अपनी पारंपरिक जीवनशैली को संजोए रखते हैं।
+.",
+      content: "Village Updates: School renovated, water tank under construction."
+    };
+
+    document.getElementById("display").innerHTML = content[section];
+  }
+</script>
+
+
+</body>
+</html>
